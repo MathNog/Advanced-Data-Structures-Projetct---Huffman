@@ -104,7 +104,6 @@ void lista_libera(Elem* lista)
 //cria um no da arvore
 Elem* novoNoArvore(Elem* min1,Elem* min2)
 {
-    printf("\n%d - %d\n",min1->freq,min2->freq);
     Elem* soma=(Elem*)malloc(sizeof(Elem));
     soma->freq = (min1->freq) + (min2->freq) +4;
     soma->simbolo='#';

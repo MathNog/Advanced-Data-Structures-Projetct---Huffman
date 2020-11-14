@@ -43,7 +43,7 @@ int main()
         exit(1);
     }
     fread(&dadosOriginais,sizeof(char),10000,f);
-    printf("DADOS ORIINAIS\n%s\n",dadosOriginais);
+    //printf("DADOS ORIINAIS\n%s\n",dadosOriginais);
     fclose(f);
 
     //criacao do arquivo de saida para os dados compactados
@@ -66,7 +66,7 @@ int main()
         }
     }
     //temos uma lista encadeada onde cada elemento é um simbolo com sua frequencia
-    lista_imprime(lista);
+    //lista_imprime(lista);
 
     //vamos ordenar esta lista
     printf("\n----------------Impressao da lista ordenada-----------------\n");
@@ -77,9 +77,8 @@ int main()
     //podemos começar a montar a arvore de huffman
     //ideia - retiro os dois primeiros da lista, criar o no da arvore e reinsiro na lista, ordenando novamente. 
     //fazer isso ate a lista so ter 1 elemento
-    Elem* min;
+    
     int flag=0; //flag para parada do while - indica que a lista so tem 1 elemento e a arvore esta pronta
-    printf("%p\n",lista);
     printf("\n---------------------Montando a arvore de huffman-----------------\n");
     while(flag!=1)
     {
