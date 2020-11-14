@@ -1,0 +1,175 @@
+Pont: 0x7fffeb2c9a60 - Simbolo: 106 - Freq: 1 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9a30 - Simbolo: 65 - Freq: 4 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9a00 - Simbolo: 103 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c99d0 - Simbolo: 120 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c99a0 - Simbolo: 104 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9970 - Simbolo: 78 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9940 - Simbolo: 122 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9910 - Simbolo: 118 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c98e0 - Simbolo: 98 - Freq: 8 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c98b0 - Simbolo: 68 - Freq: 7 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9880 - Simbolo: 10 - Freq: 17 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9850 - Simbolo: 13 - Freq: 17 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9820 - Simbolo: 46 - Freq: 18 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c97f0 - Simbolo: 102 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c97c0 - Simbolo: 108 - Freq: 33 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9790 - Simbolo: 113 - Freq: 21 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9760 - Simbolo: 99 - Freq: 37 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9730 - Simbolo: 110 - Freq: 46 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9700 - Simbolo: 114 - Freq: 82 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c96d0 - Simbolo: 116 - Freq: 30 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c96a0 - Simbolo: 117 - Freq: 60 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9670 - Simbolo: 111 - Freq: 90 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9640 - Simbolo: 112 - Freq: 28 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9610 - Simbolo: 101 - Freq: 156 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c95e0 - Simbolo: 100 - Freq: 69 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c95b0 - Simbolo: 44 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9580 - Simbolo: 109 - Freq: 62 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9550 - Simbolo: 105 - Freq: 86 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9520 - Simbolo: 115 - Freq: 77 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c94f0 - Simbolo: 97 - Freq: 121 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c94c0 - Simbolo: 32 - Freq: 219 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9490 - Simbolo: 69 - Freq: 2 - Dir: (nil) - Esq: (nil)
+
+----------------Impressao da lista ordenada-----------------
+Pont: 0x7fffeb2c9a60 - Simbolo: 106 - Freq: 1 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9490 - Simbolo: 69 - Freq: 2 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9a30 - Simbolo: 65 - Freq: 4 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9a00 - Simbolo: 103 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c99d0 - Simbolo: 120 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9970 - Simbolo: 78 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9940 - Simbolo: 122 - Freq: 5 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c98b0 - Simbolo: 68 - Freq: 7 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c98e0 - Simbolo: 98 - Freq: 8 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c99a0 - Simbolo: 104 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9910 - Simbolo: 118 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c97f0 - Simbolo: 102 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c95b0 - Simbolo: 44 - Freq: 11 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9880 - Simbolo: 10 - Freq: 17 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9850 - Simbolo: 13 - Freq: 17 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9820 - Simbolo: 46 - Freq: 18 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9790 - Simbolo: 113 - Freq: 21 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9640 - Simbolo: 112 - Freq: 28 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c96d0 - Simbolo: 116 - Freq: 30 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c97c0 - Simbolo: 108 - Freq: 33 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9760 - Simbolo: 99 - Freq: 37 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9730 - Simbolo: 110 - Freq: 46 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c96a0 - Simbolo: 117 - Freq: 60 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9580 - Simbolo: 109 - Freq: 62 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c95e0 - Simbolo: 100 - Freq: 69 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9520 - Simbolo: 115 - Freq: 77 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9700 - Simbolo: 114 - Freq: 82 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9550 - Simbolo: 105 - Freq: 86 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9670 - Simbolo: 111 - Freq: 90 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c94f0 - Simbolo: 97 - Freq: 121 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c9610 - Simbolo: 101 - Freq: 156 - Dir: (nil) - Esq: (nil)
+Pont: 0x7fffeb2c94c0 - Simbolo: 32 - Freq: 219 - Dir: (nil) - Esq: (nil)
+0x7fffeb2c9a60
+
+---------------------Montando a arvore de huffman-----------------
+
+1 - 2
+
+4 - 5
+
+5 - 5
+
+5 - 7
+
+7 - 8
+
+11 - 11
+
+11 - 11
+
+13 - 14
+
+16 - 17
+
+17 - 18
+
+19 - 21
+
+26 - 26
+
+28 - 30
+
+31 - 33
+
+37 - 37
+
+39 - 44
+
+46 - 56
+
+60 - 62
+
+62 - 68
+
+69 - 77
+
+78 - 82
+
+86 - 87
+
+90 - 106
+
+121 - 126
+
+134 - 150
+
+156 - 164
+
+177 - 200
+
+219 - 251
+
+288 - 324
+
+381 - 474
+
+616 - 859
+Pont: 0x7fffeb2c96d0 - Simbolo: 35 - Freq: 1479 - Dir: 0x7fffeb2c9700 - Esq: 0x7fffeb2cb040
+ptr_no=0x7fffeb2c96d0, simbolo=35 freq=1479 esq=0x7fffeb2cb040 dir=0x7fffeb2c9700
+ptr_no=0x7fffeb2cb040, simbolo=35 freq=616 esq=0x7fffeb2cafe0 dir=0x7fffeb2c9520
+ptr_no=0x7fffeb2cafe0, simbolo=35 freq=288 esq=0x7fffeb2caf20 dir=0x7fffeb2c97c0
+ptr_no=0x7fffeb2caf20, simbolo=35 freq=134 esq=0x7fffeb2cae00 dir=0x7fffeb2c9580
+ptr_no=0x7fffeb2cae00, simbolo=109 freq=62 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9580, simbolo=35 freq=68 esq=0x7fffeb2cad10 dir=0x7fffeb2c9970
+ptr_no=0x7fffeb2cad10, simbolo=35 freq=31 esq=0x7fffeb2cabf0 dir=0x7fffeb2c9a00
+ptr_no=0x7fffeb2cabf0, simbolo=35 freq=13 esq=0x7fffeb2caad0 dir=0x7fffeb2c9a30
+ptr_no=0x7fffeb2caad0, simbolo=65 freq=4 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9a30, simbolo=103 freq=5 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9a00, simbolo=35 freq=14 esq=0x7fffeb2cab00 dir=0x7fffeb2c99d0
+ptr_no=0x7fffeb2cab00, simbolo=120 freq=5 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c99d0, simbolo=78 freq=5 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9970, simbolo=108 freq=33 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c97c0, simbolo=35 freq=150 esq=0x7fffeb2cae30 dir=0x7fffeb2c95e0
+ptr_no=0x7fffeb2cae30, simbolo=100 freq=69 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c95e0, simbolo=115 freq=77 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9520, simbolo=35 freq=324 esq=0x7fffeb2caf50 dir=0x7fffeb2c9610
+ptr_no=0x7fffeb2caf50, simbolo=101 freq=156 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9610, simbolo=35 freq=164 esq=0x7fffeb2cae60 dir=0x7fffeb2c9760
+ptr_no=0x7fffeb2cae60, simbolo=35 freq=78 esq=0x7fffeb2cad40 dir=0x7fffeb2c9880
+ptr_no=0x7fffeb2cad40, simbolo=35 freq=37 esq=0x7fffeb2cac20 dir=0x7fffeb2c9490
+ptr_no=0x7fffeb2cac20, simbolo=35 freq=16 esq=0x7fffeb2cab30 dir=0x7fffeb2c9940
+ptr_no=0x7fffeb2cab30, simbolo=122 freq=5 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9940, simbolo=35 freq=7 esq=0x7fffeb2caaa0 dir=0x7fffeb2c9a60
+ptr_no=0x7fffeb2caaa0, simbolo=106 freq=1 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9a60, simbolo=69 freq=2 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9490, simbolo=10 freq=17 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9880, simbolo=99 freq=37 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9760, simbolo=114 freq=82 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9700, simbolo=35 freq=859 esq=0x7fffeb2cb010 dir=0x7fffeb2c9910
+ptr_no=0x7fffeb2cb010, simbolo=35 freq=381 esq=0x7fffeb2caf80 dir=0x7fffeb2c9790
+ptr_no=0x7fffeb2caf80, simbolo=35 freq=177 esq=0x7fffeb2cae90 dir=0x7fffeb2c9550
+ptr_no=0x7fffeb2cae90, simbolo=105 freq=86 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9550, simbolo=35 freq=87 esq=0x7fffeb2cad70 dir=0x7fffeb2c9820
+ptr_no=0x7fffeb2cad70, simbolo=35 freq=39 esq=0x7fffeb2cac50 dir=0x7fffeb2c9850
+ptr_no=0x7fffeb2cac50, simbolo=13 freq=17 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9850, simbolo=46 freq=18 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c9820, simbolo=35 freq=44 esq=0x7fffeb2cac80 dir=0x7fffeb2c98e0
+ptr_no=0x7fffeb2cac80, simbolo=35 freq=19 esq=0x7fffeb2cab60 dir=0x7fffeb2c98b0
+ptr_no=0x7fffeb2cab60, simbolo=68 freq=7 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c98b0, simbolo=98 freq=8 esq=(nil) dir=(nil)
+ptr_no=0x7fffeb2c98e

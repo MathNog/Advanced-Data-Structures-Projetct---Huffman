@@ -84,6 +84,7 @@ Elem* lista_retira(Elem* lista, Elem* no)
     free(p);
     return lista;
     
+    
 }
 
 void lista_libera(Elem* lista)
@@ -103,8 +104,9 @@ void lista_libera(Elem* lista)
 //cria um no da arvore
 Elem* novoNoArvore(Elem* min1,Elem* min2)
 {
+    printf("\n%d - %d\n",min1->freq,min2->freq);
     Elem* soma=(Elem*)malloc(sizeof(Elem));
-    soma->freq=min1->freq+min2->freq;
+    soma->freq = (min1->freq) + (min2->freq) +4;
     soma->simbolo='#';
     if(min1->freq>min2->freq)
     {
@@ -114,7 +116,7 @@ Elem* novoNoArvore(Elem* min1,Elem* min2)
     else
     {
         soma->esq=min1;
-        soma->esq=min2;
+        soma->dir=min2;
     }
     return soma;
 }
@@ -123,8 +125,20 @@ Elem* novoNoArvore(Elem* min1,Elem* min2)
 Elem* insereNoArv(Elem* lista, Elem* noArv)
 {
     noArv->prox=lista;
-    printf("Insere no arvore ---- %p --- %p\n",noArv,noArv->prox);
+    //printf("Insere no arvore ---- %p --- %p\n",noArv,noArv->prox);
     return noArv;
+}
+
+Elem* no_copia(Elem* lista)
+{
+    Elem* novo=(Elem*)malloc(sizeof(Elem));
+    
+    novo->freq=lista->freq;
+    novo->simbolo=lista->simbolo;
+    novo->prox=lista->prox;
+    novo->dir=lista->dir;
+    novo->esq=lista->esq;
+    return novo;
 }
 
 //so pode ser usada com a lista ordenada
@@ -137,13 +151,15 @@ Elem* monta_arv(Elem* lista,int *flag)
         return lista;
     }
     Elem* min1, *min2;
-    min1=lista;
+    min1=no_copia(lista);
     lista=lista_retira(lista,min1);
-    printf("Criamos min1 ------- %p\n",lista);
-    min2=lista;
+    //printf("Criamos min1 ------- %p\n",min1);
+    min2=no_copia(lista);
     lista=lista_retira(lista,min2);
-    printf("Criamos min2 -------%p\n",lista);
+    //printf("Criamos min2 -------%p\n",min2);
+
     Elem *noarv=novoNoArvore(min1,min2);
+    //printf("Criamos no soma: pont %p - freq %d - esq %p - dir %p\n",noarv,noarv->freq,noarv->esq,noarv->dir);
     lista=insereNoArv(lista, noarv);
     //free(min1);
     //free(min2);
@@ -245,20 +261,23 @@ int geraSeqBits(Elem* arv,char c,char *seqBits,int tam)
 }
 
 /*Funcao para escrever os bits obtidos no arquivo de saida (é nossa compactação)*/
-void  comprimeDados(FILE* saida,Elem* arv,char* dadosOriginais)
+
+void  comprimeDados(FILE* saida,Elem* arv,FILE* entrada)
 {
     unsigned char c,aux;
     unsigned tam;
-
-    while(fread(&c,1,1,dadosOriginais)>=1)//para cada simbolo de nosso texto original
+    printf("ENTROUN NO WHILE\n");
+    while(fread(&c,1,1,entrada)>=1)//para cada simbolo de nosso texto original
     {
-        char* seqBits[1024]={0};
+        printf("ENTROUN NO WHILE\n");
+        char seqBits[1024]={0};
         geraSeqBits(arv,c,seqBits,tam);//temos a sequencia de bits do simbolo em seqBits
 
         //precisamos dividir os bits em sequencias de bytes
         for(char *i=seqBits;*i;i++)//para cada bit da nossa sequencia
         {
             aux=aux | (1<<(tam%8));
+            printf("%c\n",aux);
         }
         tam+=1;
 
@@ -273,6 +292,7 @@ void  comprimeDados(FILE* saida,Elem* arv,char* dadosOriginais)
         //fwrite(&tam,1,sizeof(unsigned),saida);
     }
 }
+
 
 /*Funções auxiliares para manipulação de árvores binárias*/
 

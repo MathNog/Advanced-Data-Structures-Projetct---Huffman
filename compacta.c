@@ -43,8 +43,8 @@ int main()
         exit(1);
     }
     fread(&dadosOriginais,sizeof(char),10000,f);
-    //printf("%s\n",dadosOriginais);
-    
+    printf("DADOS ORIINAIS\n%s\n",dadosOriginais);
+    fclose(f);
 
     //criacao do arquivo de saida para os dados compactados
     saida=fopen("texto_compactado.txt","wb");
@@ -84,22 +84,28 @@ int main()
     while(flag!=1)
     {
         lista = monta_arv(lista,&flag);
-        merge_sort_lista(&lista);
-        flag=1;
-        
+        merge_sort_lista(&lista);  
     }
     lista_imprime(lista);
+    
 
-    //exibe_preordem(lista);
+    exibe_preordem(lista);
 
     //Nao rodar a partir daqui! Falta acertar a arvore!!!!!!!!!!
     //Uma vez pronta nossa arvore de huffman, precisamos saber o codigo para cada simbolo
-
-    comprimeDados(saida,lista,dadosOriginais);
+    FILE* entrada;
+    entrada=fopen("original.txt","rb");
+    if(entrada==NULL)
+    {
+        printf("Erro no arquivo\n");
+        exit(1);
+    }
+    
+    comprimeDados(saida,lista,f);
 
     /*Neste ponto, temos nosso arquivo compactado em "texto_compactado.txt"*/
     /*Verifique externamente o tamanho do arquivo compactado para averiguar se nossa compactação foi reazoável*/
 
     fclose(saida);
-    fclose(f);
+    fclose(entrada);
 }
