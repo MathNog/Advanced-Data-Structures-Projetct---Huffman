@@ -212,6 +212,41 @@ void merge_sort_lista(Elem** lista)
     *lista=merge_sorted(a,b);
 }
 
+/*Funcoes para obter os bits de cada simbolo*/
+
+//funcao carrega o parametro seqBits com os bits corretos a fim de gerar o codigo de determinado simbolo
+//ela devera ser chamada para cada simbolo do texto original
+int geraSeqBits(Elem* arv,char c,char *seqBits,int tam)
+{
+    if(!(arv->esq||arv->dir)&&arv->simbolo==c)
+    {
+        seqBits[tam]='\0';
+        return 1;
+    }
+    else
+    {
+        int achou=0;
+        if(arv->esq)
+        {
+            seqBits[tam]='0';
+            achou=geraSeqBits(arv->esq,c,seqBits,tam+1);
+        }
+        else if(!achou&&arv->dir)
+        {
+            seqBits[tam]='1';
+            achou=geraSeqBits(arv->dir,c,seqBits,tam+1);
+        }
+        else if (!achou)
+        {
+            seqBits[tam]='\0';
+        }
+        return achou;   
+    }
+}
+
+
+
+
 /*Funções auxiliares para manipulação de árvores binárias*/
 
 void exibe_preordem(Elem *p)

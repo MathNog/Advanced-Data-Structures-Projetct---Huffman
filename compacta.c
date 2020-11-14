@@ -34,12 +34,25 @@ vez que um símbolo é reconhecido. Ao final deste processo, obtém-se a informa
 int main()
 {
     //leitura dos dados do arquivo texto
-    FILE *f;
+    FILE *f,*saida;
     char dadosOriginais[10000];
     f=fopen("original.txt","rb");
+    if(f==NULL)
+    {
+        printf("Erro na criação do arquivo!\n");
+        exit(1);
+    }
     fread(&dadosOriginais,sizeof(char),10000,f);
     //printf("%s\n",dadosOriginais);
     fclose(f);
+
+    //criacao do arquivo de saida para os dados compactados
+    saida=fopen("texto_compactado.txt","wb");
+    if(saida==NULL)
+    {
+        printf("Erro na criação do arquivo!\n");
+        exit(1);
+    }
 
     //carregar a lista com os simbolos e suas frequencias
     Elem *lista=lista_cria();
@@ -79,9 +92,37 @@ int main()
 
     //exibe_preordem(lista);
 
+    //Nao rodar a partir daqui! Falta acertar a arvore!!!!!!!!!!
     //Uma vez pronta nossa arvore de huffman, precisamos saber o codigo para cada simbolo
-    
+    unsigned char c,aux;
+    unsigned tam;
+
+    while(fread(&c,1,1,dadosOriginais)>=1)//para cada simbolo de nosso texto original
+    {
+        char* seqBits[1024]={0};
+        geraSeqBits(lista,c,seqBits,tam);//temos a sequencia de bits do simbolo em seqBits
+
+        //precisamos dividir os bits em sequencias de bytes
+        for(char *i=seqBits;*i;i++)//para cada bit da nossa sequencia
+        {
+            aux=aux | (1<<(tam%8));
+        }
+        tam+=1;
+
+        if(tam%8==0)//se temos um numero fechado de bytes (demos sorte)
+        {
+            fwrite(&aux,1,1,saida);//passamos o byte para o arquivo de saida
+            aux=0;
+        }
+        fwrite(&aux,1,1,saida);
+        fseek(saida, 256*sizeof(unsigned),SEEK_SET);
+        //precisa salvar o tamanho?
+        //fwrite(&tam,1,sizeof(unsigned),saida);
+
+    }
+
+    /*Neste ponto, temos nosso arquivo compactado em "texto_compactado.txt"*/
 
 
-
+    fclose(saida);
 }
