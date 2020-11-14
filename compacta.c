@@ -98,7 +98,7 @@ int main()
     comprimeDados(saida,lista,dadosOriginais);
 
     /*Neste ponto, temos nosso arquivo compactado em "texto_compactado.txt"*/
-    /*Vamos veficar o tamanho do arquivo de entrada e saida??*/
+    /*Verifique externamente o tamanho do arquivo compactado para averiguar se nossa compactação foi reazoável*/
 
     fclose(saida);
     fclose(f);
