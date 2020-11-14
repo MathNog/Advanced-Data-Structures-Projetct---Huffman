@@ -44,7 +44,7 @@ int main()
     }
     fread(&dadosOriginais,sizeof(char),10000,f);
     //printf("%s\n",dadosOriginais);
-    fclose(f);
+    
 
     //criacao do arquivo de saida para os dados compactados
     saida=fopen("texto_compactado.txt","wb");
@@ -94,35 +94,12 @@ int main()
 
     //Nao rodar a partir daqui! Falta acertar a arvore!!!!!!!!!!
     //Uma vez pronta nossa arvore de huffman, precisamos saber o codigo para cada simbolo
-    unsigned char c,aux;
-    unsigned tam;
 
-    while(fread(&c,1,1,dadosOriginais)>=1)//para cada simbolo de nosso texto original
-    {
-        char* seqBits[1024]={0};
-        geraSeqBits(lista,c,seqBits,tam);//temos a sequencia de bits do simbolo em seqBits
-
-        //precisamos dividir os bits em sequencias de bytes
-        for(char *i=seqBits;*i;i++)//para cada bit da nossa sequencia
-        {
-            aux=aux | (1<<(tam%8));
-        }
-        tam+=1;
-
-        if(tam%8==0)//se temos um numero fechado de bytes (demos sorte)
-        {
-            fwrite(&aux,1,1,saida);//passamos o byte para o arquivo de saida
-            aux=0;
-        }
-        fwrite(&aux,1,1,saida);
-        fseek(saida, 256*sizeof(unsigned),SEEK_SET);
-        //precisa salvar o tamanho?
-        //fwrite(&tam,1,sizeof(unsigned),saida);
-
-    }
+    comprimeDados(saida,lista,dadosOriginais);
 
     /*Neste ponto, temos nosso arquivo compactado em "texto_compactado.txt"*/
-
+    /*Vamos veficar o tamanho do arquivo de entrada e saida??*/
 
     fclose(saida);
+    fclose(f);
 }
