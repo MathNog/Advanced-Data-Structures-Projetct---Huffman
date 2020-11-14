@@ -56,7 +56,7 @@ int main()
     lista_imprime(lista);
 
     //vamos ordenar esta lista
-    printf("-----------------\n");
+    printf("\n----------------Impressao da lista ordenada-----------------\n");
     merge_sort_lista(&lista);
     lista_imprime(lista);
 
@@ -66,14 +66,22 @@ int main()
     //fazer isso ate a lista so ter 1 elemento
     Elem* min;
     int flag=0; //flag para parada do while - indica que a lista so tem 1 elemento e a arvore esta pronta
-    printf("-----------------\n");
+    printf("%p\n",lista);
+    printf("\n---------------------Montando a arvore de huffman-----------------\n");
     while(flag!=1)
     {
         lista = monta_arv(lista,&flag);
         merge_sort_lista(&lista);
+        flag=1;
         
     }
     lista_imprime(lista);
 
-    exibe_preordem(lista);
+    //exibe_preordem(lista);
+
+    //Uma vez pronta nossa arvore de huffman, precisamos saber o codigo para cada simbolo
+    
+
+
+
 }

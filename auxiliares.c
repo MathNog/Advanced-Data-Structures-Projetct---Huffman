@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
+/*Estrutura de um elemento de nossa lista encadeada*/
 typedef struct elem
 {
     char simbolo;
@@ -10,6 +10,8 @@ typedef struct elem
     struct elem *esq;
     struct elem *dir;
 }Elem;
+
+/*Funções auxiliares para nossa lista encadeada*/
 
 Elem *lista_cria()
 {
@@ -31,7 +33,7 @@ void lista_imprime(Elem *lista)
     Elem *p;
     for(p=lista;p!=NULL;p=p->prox)
     {
-        printf("%d - %d\n",p->simbolo,p->freq);
+        printf("Pont: %p - Simbolo: %d - Freq:% d - Dir: %p - Esq: %p\n",p,p->simbolo,p->freq,p->dir,p->esq);
     }
 }
 
@@ -59,8 +61,10 @@ int lista_busca(Elem*lista, char c)
     return 0;
 }
 
-Elem* lista_retira(Elem* lista, char c, int freq)
+Elem* lista_retira(Elem* lista, Elem* no)
 {
+    char c=no->simbolo;
+    int freq=no->freq;
     Elem* a=NULL;
     Elem* p=lista;
     while(p!=NULL&&p->simbolo!=c)
@@ -82,13 +86,27 @@ Elem* lista_retira(Elem* lista, char c, int freq)
     
 }
 
+void lista_libera(Elem* lista)
+{
+    Elem* t;
+    Elem* p=lista;
+    while(p!=NULL)
+    {
+        t=p->prox;
+        free(p);
+        p=t;
+    }
+}
+
+/*Funções auxiliares para criação da árvore de huffman*/
+
 //cria um no da arvore
 Elem* novoNoArvore(Elem* min1,Elem* min2)
 {
     Elem* soma=(Elem*)malloc(sizeof(Elem));
     soma->freq=min1->freq+min2->freq;
     soma->simbolo='#';
-    if(min1->freq>=min2->freq)
+    if(min1->freq>min2->freq)
     {
         soma->esq=min2;
         soma->dir=min1;
@@ -105,6 +123,7 @@ Elem* novoNoArvore(Elem* min1,Elem* min2)
 Elem* insereNoArv(Elem* lista, Elem* noArv)
 {
     noArv->prox=lista;
+    printf("Insere no arvore ---- %p --- %p\n",noArv,noArv->prox);
     return noArv;
 }
 
@@ -112,21 +131,26 @@ Elem* insereNoArv(Elem* lista, Elem* noArv)
 //retira os dois primeiros nos da lista, cria o no pai deles, conecta e reinsere o no pai na lista
 Elem* monta_arv(Elem* lista,int *flag)
 {
-    if(lista->prox==NULL){//chegamos a uma lista de 1 elemento
+    if(lista->prox==NULL)
+    {//chegamos a uma lista de 1 elemento
         *flag=1;
         return lista;
     }
     Elem* min1, *min2;
     min1=lista;
-    lista=lista->prox;
+    lista=lista_retira(lista,min1);
+    printf("Criamos min1 ------- %p\n",lista);
     min2=lista;
-    lista=lista->prox;
+    lista=lista_retira(lista,min2);
+    printf("Criamos min2 -------%p\n",lista);
     Elem *noarv=novoNoArvore(min1,min2);
     lista=insereNoArv(lista, noarv);
-    free(min1);
-    free(min2);
+    //free(min1);
+    //free(min2);
     return lista;
 }
+
+/*Funções auxiliares para ordenação da lista*/
 
 Elem* merge_sorted(Elem* a, Elem* b)
 {
@@ -188,6 +212,8 @@ void merge_sort_lista(Elem** lista)
     *lista=merge_sorted(a,b);
 }
 
+/*Funções auxiliares para manipulação de árvores binárias*/
+
 void exibe_preordem(Elem *p)
 {
     if (p == NULL)
@@ -199,17 +225,5 @@ void exibe_preordem(Elem *p)
         exibe_preordem(p->esq);
     if (p->dir != NULL)
         exibe_preordem(p->dir);
-}
-
-void lista_libera(Elem* lista)
-{
-    Elem* t;
-    Elem* p=lista;
-    while(p!=NULL)
-    {
-        t=p->prox;
-        free(p);
-        p=t;
-    }
 }
 
