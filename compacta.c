@@ -100,7 +100,8 @@ int main()
         exit(1);
     }
     
-    comprimeDados(saida,lista,f);
+    compress(saida, lista,dadosOriginais);
+    //comprimeDados(saida,lista,dadosOriginais);
 
     /*Neste ponto, temos nosso arquivo compactado em "texto_compactado.txt"*/
     /*Verifique externamente o tamanho do arquivo compactado para averiguar se nossa compactação foi reazoável*/
