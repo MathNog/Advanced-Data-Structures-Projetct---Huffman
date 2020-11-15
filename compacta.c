@@ -92,19 +92,22 @@ int main()
 
     //Nao rodar a partir daqui! Falta acertar a arvore!!!!!!!!!!
     //Uma vez pronta nossa arvore de huffman, precisamos saber o codigo para cada simbolo
-    FILE* entrada;
-    entrada=fopen("original.txt","rb");
-    if(entrada==NULL)
+    
+    compress(saida, lista,dadosOriginais);
+    //comprimeDados(saida,lista,dadosOriginais);
+    FILE* descompact;
+    descompact=fopen("arquivo_descompactado.txt","wb");
+    if(descompact==NULL)
     {
-        printf("Erro no arquivo\n");
+        printf("Erro na criacao do arquivo\n");
         exit(1);
     }
-    
-    comprimeDados(saida,lista,f);
 
     /*Neste ponto, temos nosso arquivo compactado em "texto_compactado.txt"*/
     /*Verifique externamente o tamanho do arquivo compactado para averiguar se nossa compactação foi reazoável*/
+    decompress(saida, lista,descompact);
 
     fclose(saida);
-    fclose(entrada);
+    fclose(descompact);
+    
 }
