@@ -33,7 +33,7 @@ void lista_imprime(Elem *lista)
     Elem *p;
     for(p=lista;p!=NULL;p=p->prox)
     {
-        printf("Pont: %p - Simbolo: %d - Freq:% d - Dir: %p - Esq: %p\n",p,p->simbolo,p->freq,p->dir,p->esq);
+        printf("Pont: %p - Simbolo: %c - Freq: %d - Dir: %p - Esq: %p\n",p,p->simbolo,p->freq,p->dir,p->esq);
     }
 }
 
@@ -229,6 +229,83 @@ void merge_sort_lista(Elem** lista)
 
 /*Funcoes para obter os bits de cada simbolo*/
 
+//funcao vai achar a frequencia do no em que está o simbolo necessario
+void busca_AB(Elem* arv,char c,int *freq)
+{
+    if(arv==NULL)
+        printf("Aŕvore nao criada\n");
+    else
+    {    
+        if(arv->simbolo==c)
+            *freq=arv->freq;
+        if (arv->esq != NULL)
+            busca_AB(arv->esq,c,freq);
+        if (arv->dir != NULL)
+            busca_AB(arv->dir,c,freq);
+    }
+    
+}
+
+int retornaFreq(Elem*arv,char c)
+{
+    int freq;
+    busca_AB(arv,c,&freq);//sei a frequencia do simbolo que quero codificar
+    return freq;
+}
+
+//com a frequencia do no em maos, podemos usar o fato da arvore ser ABB e ir direto ate ele, obtendo a seqBits correta
+void geraBits(Elem*arv,char c,int freq,char *seqBits,int tam)
+{
+    if(!(arv->esq||arv->dir)&&arv->simbolo==c&&arv->freq==freq)
+    {
+        seqBits[tam]='\0';
+        return;
+    }
+    else
+    {
+        if(arv->freq>freq)
+        {
+            seqBits[tam]='1';
+            geraBits(arv->dir,c,freq,seqBits,tam+1);
+        }
+        else
+        {
+            seqBits[tam]='0';
+            geraBits(arv->esq,c,freq,seqBits,tam+1);
+        }    
+    }
+}
+
+void compress(FILE* saida, Elem* arv,char* dadosOriginais)
+{
+    unsigned char c,aux=0;
+    int freq,tam=0;
+    char seqBits[1024]={0};
+    printf("Entrou COMPRESS\n");
+    for(int i=0;i<strlen(dadosOriginais);i++)
+    {
+        printf("Entro FOR\n");
+        c = dadosOriginais[i];
+        busca_AB(arv,c,&freq);
+        geraBits(arv,c,freq,seqBits,0);
+        for(char*j=seqBits;*j;j++)
+        {
+            printf("Entrou FOR2\n");
+            if(*j=='1')
+                aux=aux|(1<<(tam%8));
+            tam++;
+            if(tam%8==0)
+            {
+                fwrite(&aux,1,1,saida);
+                aux=0;
+            }
+        }
+    }
+    fwrite(&aux,1,1,saida);
+
+}
+
+
 //funcao carrega o parametro seqBits com os bits corretos a fim de gerar o codigo de determinado simbolo
 //ela devera ser chamada para cada simbolo do texto original
 int geraSeqBits(Elem* arv,char c,char *seqBits,int tam)
@@ -261,22 +338,24 @@ int geraSeqBits(Elem* arv,char c,char *seqBits,int tam)
 
 /*Funcao para escrever os bits obtidos no arquivo de saida (é nossa compactação)*/
 
-void  comprimeDados(FILE* saida,Elem* arv,FILE* entrada)
+void  comprimeDados(FILE* saida,Elem* arv,char*dadosOriginais)
 {
     unsigned char c,aux;
     unsigned tam;
     printf("ENTROUN NO WHILE\n");
-    while(fread(&c,1,1,entrada)>=1)//para cada simbolo de nosso texto original
+    int i=0;
+    while(dadosOriginais[i]!='\0')//para cada simbolo de nosso texto original
     {
         printf("ENTROUN NO WHILE\n");
         char seqBits[1024]={0};
         geraSeqBits(arv,c,seqBits,tam);//temos a sequencia de bits do simbolo em seqBits
-
+        printf("%d\n",i);
         //precisamos dividir os bits em sequencias de bytes
         for(char *i=seqBits;*i;i++)//para cada bit da nossa sequencia
         {
-            aux=aux | (1<<(tam%8));
-            printf("%c\n",aux);
+            if(*i=='1')
+                aux=aux | (1<<(tam%8));
+            
         }
         tam+=1;
 
@@ -289,7 +368,10 @@ void  comprimeDados(FILE* saida,Elem* arv,FILE* entrada)
         fseek(saida, 256*sizeof(unsigned),SEEK_SET);
         //precisa salvar o tamanho?
         //fwrite(&tam,1,sizeof(unsigned),saida);
+        
+        i++;
     }
+
 }
 
 
